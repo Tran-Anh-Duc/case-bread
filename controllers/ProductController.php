@@ -1,12 +1,15 @@
 <?php
 include_once "models/ProductModel.php";
+include_once "models/CategoryModel.php";
 class ProductController
 {
     private ProductModel $productModel;
+    private CategoryModel $categoryModel;
 
     public function __construct()
     {
         $this->productModel = new ProductModel();
+        $this->categoryModel = new CategoryModel();
     }
 
     public function index()
@@ -44,6 +47,10 @@ class ProductController
 
     public function showAddProduct()
     {
+
+        $categories = $this->categoryModel->getAll();
+//        echo "<pre>";
+//        var_dump($categories);
         include_once "views/products/ProductAdd.php";
     }
 
