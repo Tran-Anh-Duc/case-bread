@@ -7,9 +7,9 @@
                value="<?= $product['description'] ?>"><br>
         <input class="alert alert-primary" role="alert" type="text" name="price" placeholder="giá sản phẩm"
                value="<?= $product['price'] ?>"><br>
-        <button type="submit" type="button" class="btn btn-primary">change</button>
+        <button type="submit" type="button" class="btn btn-primary">Thay đổi</button>
         <a href="index.php">
-            <button type="button" class="btn btn-primary">back home</button>
+            <button type="button" class="btn btn-primary">Quay lại</button>
         </a>
     </form>
 </div>

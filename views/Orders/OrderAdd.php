@@ -12,9 +12,9 @@
 
     <br>
     <a href="index.php">
-        <button class="btn btn-primary" style="margin: 5px">Back</button>
+        <button class="btn btn-primary" style="margin: 5px">Quay Lại</button>
     </a>
-    <button type="button" class="btn btn-primary" style="margin: 5px" type="submit">Add New</button>
+    <button type="button" class="btn btn-primary" style="margin: 5px" type="submit">Thêm Mới</button>
 </form>
 </div>
 

@@ -1,6 +1,7 @@
 <?php
 include_once "models/ProductModel.php";
 include_once "models/CategoryModel.php";
+
 class ProductController
 {
     private ProductModel $productModel;
@@ -19,7 +20,6 @@ class ProductController
     }
 
 
-
     public function AddProduct($data)
     {
         $filepath = "";
@@ -34,7 +34,7 @@ class ProductController
 
         }
         $data2 = [
-            "id" =>$_REQUEST['id'],
+            "id" => $_REQUEST['id'],
             "name" => $_REQUEST['name'],
             "description" => $_REQUEST['description'],
             "price" => $_REQUEST['price'],
@@ -83,6 +83,47 @@ class ProductController
         ];
         $this->productModel->editProduct($data3);
         header("location:index.php");
+    }
+
+    public function showDetailProduct($id)
+    {
+        $product = $this->productModel->getById($id);
+        include_once "views/products/Product-detail.php";
+    }
+
+    public function home()
+    {
+        $products = $this->productModel->getAll();
+        include_once "views/layout/home.php";
+    }
+
+    public function addToCart($id)
+    {
+        $cart = isset($_SESSION["cart"]) ? $_SESSION['cart'] : [];
+        $product = $this->productModel->getById($id);
+        if (!isset($cart[$id])){
+            $cart[$id] = array(
+                "id" => $product["id"],
+                "name" =>$product["name"],
+                "image" => $product["image"],
+                "price" => $product["price"],
+                "quantity" => 1,
+            );
+        }else{
+            $cart[$id]["quantity"] +=1;
+        }
+
+
+        $_SESSION["cart"] = $cart;
+
+
+        header("location:index.php?page=home");
+    }
+
+    public function showCart()
+    {
+        $products = isset($_SESSION["cart"]) ? $_SESSION['cart'] : [];
+        include_once "views/layout/cart.php";
     }
 
 }

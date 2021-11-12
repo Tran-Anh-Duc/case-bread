@@ -178,7 +178,7 @@
 </style>
 <body>
 <div class="login">
-    <h1>login</h1>
+    <h1>Đăng Nhập</h1>
     <form method="post">
         <input type="text" name="email" placeholder="Tên đăng nhập"><br>
         <input type="password" name="password" placeholder="Mật khẩu"><br><br>

@@ -1,40 +1,46 @@
-
-
+<?php
+include_once "inc/header.php";
+?>
 <div class="card">
     <div class="card-header">
-        Quản Lí Sản Phẩm
+        MY CART
     </div>
     <div class="card-body">
-        <h5 class="card-title">Sản Phẩm</h5>
-        <a href="index.php?page=product-create">
-            <button type="button" class="btn btn-primary pr-5 pl-5 mb-3">Thêm Sản Phẩm</button>
-        </a>
+        <h5 class="card-title">Product manager</h5>
         <table class="table">
             <thead class="thead-dark">
             <tr>
                 <th>ID</th>
-                <th>Tên sản phẩm</th>
-                <th>Mô tả sản phẩm</th>
-                <th>Giá sản phẩm</th>
                 <th>Ảnh sản phẩm</th>
-                <th colspan="3">Hành động</th>
+                <th>Tên sản phẩm</th>
+                <th>Giá sản phẩm</th>
+                <th>Số lượng</th>
+                <th colspan="3">Action</th>
             </tr>
             </thead>
             <tbody>
+            <?php $sum = 0 ?>
             <?php if (isset($products)): ?>
                 <?php foreach ($products as $product): ?>
+                    <?php
+                        $total = ($product["quantity"] * $product["price"]);
+                        $sum += $total;
+                    ?>
                     <tr>
                         <td><?= $product['id'] ?></td>
+                        <td><img src="<?= $product['image'] ?>" width="150"></td>
                         <td><?= $product['name'] ?></td>
-                        <td><?= $product['description'] ?></td>
                         <td><?= $product['price'] ?></td>
-                        <td><img src="<?= $product['image']?>" width="150"></td>
-                        <td><a type="button" class="btn btn-warning" href="index.php?page=product-detail&id=<?php echo $product["id"] ?>">Chi tiết</a></td>
+                        <td><?= $product['quantity'] ?></td>
+                        <td><?php echo number_format($total)?></td>
                         <td><a type="button" class="btn btn-danger" onclick="return confirm('are you sure')"
-                               href="index.php?page=product-delete&id=<?php echo $product["id"] ?>">Xóa</a></td>
-                        <td><a type="button" class="btn btn-warning" href="index.php?page=product-edit&id=<?php echo $product["id"] ?>">Chỉnh sửa</a></td>
+                               href="index.php?page=product-delete&id=<?php echo $product["id"] ?>">Delete</a></td>
                     </tr>
                 <?php endforeach; ?>
+            <tr>
+                <th colspan="5">Tổng tiền</th>
+                <td colspan="2"><?php echo number_format($sum)."VND"?></td>
+            </tr>
             <?php else: ?>
                 <tr>
                     <td colspan="4">khong co san pham nao o day</td>
@@ -44,6 +50,7 @@
         </table>
     </div>
 </div>
+
 
 
 

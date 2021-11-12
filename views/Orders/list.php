@@ -3,12 +3,12 @@
 
 <div class="card">
     <div class="card-header">
-        Order
+        Quản Lí Đơn Hàng
     </div>
     <div class="card-body">
-        <h5 class="card-title">Special Order</h5>
+        <h5 class="card-title">Đơn Hàng</h5>
         <a href="index.php?page=order-create"   >
-            <button type="button" class="btn btn-primary pr-5 pl-5 mb-3 ">ADD NEW</button>
+            <button type="button" class="btn btn-primary pr-5 pl-5 mb-3 ">Thêm Mới</button>
         </a>
         <table class="table">
             <thead class="thead-dark">
@@ -19,7 +19,7 @@
                 <th>Ghi chú</th>
                 <th>Số điện thoại</th>
                 <th>Tổng tiền</th>
-                <th colspan="2">Action</th>
+                <th colspan="2">Hành Động</th>
             </tr>
             </thead>
             <tbody>
@@ -35,8 +35,8 @@
                         <!--                <td><img src="--><?//= $product['image']?><!--" width="150"></td>-->
                         <!--                <td><a href="index.php?page=product-detail&id=--><?php //echo $product["id"] ?><!--">Detail</a></td>-->
                         <td><a type="button" class="btn btn-danger" onclick="return confirm('are you sure')"
-                               href="index.php?page=order-delete&id=<?php echo $order["id"] ?>">Delete</a></td>
-                        <td><a type="button" class="btn btn-warning" href="index.php?page=order-edit&id=<?php echo $order["id"] ?>">Edit</a></td>
+                               href="index.php?page=order-delete&id=<?php echo $order["id"] ?>">Xóa</a></td>
+                        <td><a type="button" class="btn btn-warning" href="index.php?page=order-edit&id=<?php echo $order["id"] ?>">Chỉnh Sửa</a></td>
                     </tr>
                 <?php endforeach; ?>
             <?php else: ?>
