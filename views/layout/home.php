@@ -9,6 +9,11 @@ $role = ($_SESSION["role"] ?? "");
     include_once "inc/nav.php";
     include_once "inc/banner.php";
     ?>
+
+    <div class="content" style="margin:20px 0 ">
+        <h3>Sản phẩm nổi bật</h3>
+    </div>
+
     <div class="row">
     <?php foreach ($products as $product):?>
 <div class="mt-3 col-3" >
@@ -17,7 +22,7 @@ $role = ($_SESSION["role"] ?? "");
         <div class="card-body">
             <h5 class="card-title"><?php echo $product["name"]?></h5>
             <p class="card-text">Mô tả : <?= $product["description"] ?></p>
-            <p class="card-text">Giá : <?= $product["price"] ?></p>
+            <p class="card-text">Giá : <?= number_format($product["price"]) ?> VND</p>
             <a href="index.php?page=product-detail&id=<?php echo $product["id"] ?>" class="btn btn-primary">Chi tiết </a>
             <a href="index.php?page=addToCart&id=<?php echo $product["id"] ?>" class="btn btn-primary">Mua</a>
         </div>

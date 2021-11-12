@@ -50,7 +50,7 @@ switch ($page) {
             $authController->checkAuth();
             $productCategoryController->index();
         }elseif($role == 2){
-            echo "đăng nhập bằng admin";
+            $oderController->danger();
         }
         break;
        case "productcategory-detail";
@@ -62,7 +62,7 @@ switch ($page) {
             $authController->checkAuth();
             $productController->index();
         }elseif($role == 2){
-            echo "đăng nhập bằng admin";
+            $oderController->danger();
         }
         break;
     case "category-list":
@@ -70,7 +70,7 @@ switch ($page) {
             $authController->checkAuth();
             $categoryController->index();
         }elseif($role == 2){
-            echo "đăng nhập bằng admin";
+            $oderController->danger();
         }
         break;
     case "order-list":
@@ -78,7 +78,7 @@ switch ($page) {
             $authController->checkAuth();
             $oderController->index();
         }elseif($role == 2){
-            echo "đăng nhập bằng admin";
+            $oderController->danger();
         }
         break;
     case "product-create";

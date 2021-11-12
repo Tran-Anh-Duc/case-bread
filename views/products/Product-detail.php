@@ -1,49 +1,19 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <style>
-        .card {
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-            max-width: 300px;
-            margin: auto;
-            text-align: center;
-            font-family: arial;
-        }
+<?php include_once "inc/header.php";?>
+<div class="row">
+    <div>
+        <img src="<?= $product["image"]; ?>" alt="">
 
-        .price {
-            color: grey;
-            font-size: 22px;
-        }
+    </div>
 
-        .card button {
-            border: none;
-            outline: 0;
-            padding: 12px;
-            color: white;
-            background-color: #000;
-            text-align: center;
-            cursor: pointer;
-            width: 100%;
-            font-size: 18px;
-        }
 
-        .card button:hover {
-            opacity: 0.7;
-        }
-    </style>
-</head>
-<body>
-
-<h2 style="text-align:center">Product </h2>
-
-<div class="card">
+<div class="card col" >
     <img src="" alt="" ">
-    <h1><?= $product["name"]; ?></h1>
-    <p class="price"><?= $product["price"]; ?></p>
-    <p><?= $product["description"]; ?></p>
-<!--    <p><button>Add to Cart</button></p>-->
+    <h1>Tên sản phẩm : <?= $product["name"]; ?></h1>
+    <p class="price">Giá sản phẩm :<?= number_format($product["price"]); ?> VND</p>
+    <p>Thành phần : <?= $product["description"]; ?></p>
 </div>
-
-</body>
-</html>
+</div>
+<?php
+include_once "inc/footer.php";
+?>
 

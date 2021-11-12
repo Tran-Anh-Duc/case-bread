@@ -31,7 +31,7 @@
                         <td><?= $order['date'] ?></td>
                         <td><?= $order['note'] ?></td>
                         <td><?= $order['phone'] ?></td>
-                        <td><?= $order['totalmoney'] ?></td>
+                        <td><?= number_format($order['totalmoney'] )?></td>
                         <!--                <td><img src="--><?//= $product['image']?><!--" width="150"></td>-->
                         <!--                <td><a href="index.php?page=product-detail&id=--><?php //echo $product["id"] ?><!--">Detail</a></td>-->
                         <td><a type="button" class="btn btn-danger" onclick="return confirm('are you sure')"

@@ -29,9 +29,9 @@
                         <td><?= $productcategory['name_category'] ?></td>
                         <td><?= $productcategory['name'] ?></td>
                         <td><?= $productcategory['description'] ?></td>
-                        <td><?= $productcategory['price'] ?></td>
+                        <td><?= number_format($productcategory['price']) ?></td>
                         <td><img src="<?= $productcategory['image']?>" width="150"></td>
-                        <td><a href="index.php?page=productcategory-detail&id=<?php echo $productcategory["id"] ?>">Chi tiết</a></td>
+                        <td><a type="button" class="btn btn-primary" href="index.php?page=productcategory-detail&id=<?php echo $productcategory["id"] ?>">Chi tiết</a></td>
                     </tr>
                 <?php endforeach; ?>
             <?php else: ?>

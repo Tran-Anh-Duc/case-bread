@@ -64,6 +64,10 @@ class OderController
         header("location:index.php");
     }
 
+    public function danger()
+    {
+        include_once "views/Orders/danger.php";
+    }
 
 
 

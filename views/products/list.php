@@ -27,7 +27,7 @@
                         <td><?= $product['id'] ?></td>
                         <td><?= $product['name'] ?></td>
                         <td><?= $product['description'] ?></td>
-                        <td><?= $product['price'] ?></td>
+                        <td><?= number_format($product['price']) ?></td>
                         <td><img src="<?= $product['image']?>" width="150"></td>
                         <td><a type="button" class="btn btn-warning" href="index.php?page=product-detail&id=<?php echo $product["id"] ?>">Chi tiết</a></td>
                         <td><a type="button" class="btn btn-danger" onclick="return confirm('are you sure')"
