@@ -112,11 +112,7 @@ class ProductController
         }else{
             $cart[$id]["quantity"] +=1;
         }
-
-
         $_SESSION["cart"] = $cart;
-
-
         header("location:index.php?page=home");
     }
 

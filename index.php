@@ -162,7 +162,10 @@ switch ($page) {
         break;
     case "addToCart":
         $id = $_REQUEST['id'];
-        $productController->addToCart($id);
+
+            $productController->addToCart($id);
+
+
         break;
     case "cart":
         $productController->showCart();

@@ -21,7 +21,7 @@
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
-                    Tùy Chọn
+                    <i class="fas fa-caret-circle-down"></i>Tùy Chọn
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="nav-link" href="index.php?page=productCategory-list">Danh sách sản phẩm</a>
@@ -33,7 +33,7 @@
 
             </li>
             <li class="nav-item">
-                <a href="index.php?page=cart" class="nav-link ">Giỏ Hàng(<?= isset($_SESSION["cart"])? count($_SESSION["cart"]):0  ?>)</a>
+                <a href="index.php?page=cart" class="nav-link "><i class="fas fa-cart-plus"></i>Giỏ Hàng(<?= isset($_SESSION["cart"])? count($_SESSION["cart"]):0  ?>)</a>
             </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
